@@ -30,12 +30,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <div className='col-md-9'>{
           this.state.businesses.map((business) => {
-            console.log('business ', business);
             return (<BusinessProfile onTitleClick={this.props.onTitleClick} key={business.id} business={business}/>)
           })
         }</div>
