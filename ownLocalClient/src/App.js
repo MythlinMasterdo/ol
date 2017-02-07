@@ -36,7 +36,7 @@ class App extends Component {
         <div className='col-md-9'>{
           this.state.businesses.map((business) => {
             console.log('business ', business);
-            return (<BusinessProfile onTitleClick={this.props.onTitleClick} key={business.id} business={business.name}/>)
+            return (<BusinessProfile onTitleClick={this.props.onTitleClick} key={business.id} business={business}/>)
           })
         }</div>
       </div>

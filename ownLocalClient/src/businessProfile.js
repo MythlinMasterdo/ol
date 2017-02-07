@@ -9,6 +9,7 @@ class BusinessProfile extends Component {
   render() {
     return (
       <div className='businessProfile'>
+        {console.log('props' , this.props)}
         <div className='businessCard' onClick={() => this.props.onTitleClick(this.props.facility.id)}>
           <div className='info col-md-9'>
             <h3 className='businessCardName' > {this.props.business.name} </h3>
