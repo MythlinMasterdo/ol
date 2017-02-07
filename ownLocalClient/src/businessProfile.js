@@ -4,11 +4,11 @@ import { Link } from 'react-router';
 
 class BusinessProfile extends Component {
 
+
   render() {
     return (
       <div className='businessProfile'>
         <Link to="/business">
-        {/* {console.log('props' , this.props)} */}
         <div className='businessCard'>
           <div className='info col-md-9'>
             <h3 className='businessCardName' > {this.props.business.name} </h3>
