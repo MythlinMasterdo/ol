@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-require('./ProfileCardCss.css');
+require('./businessProfileCss.css');
 
 class BusinessProfile extends Component {
   constructor(props) {
