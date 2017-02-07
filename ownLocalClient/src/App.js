@@ -4,15 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  clickHandler() {
-    axios.get('http://ec2-54-84-251-148.compute-1.amazonaws.com/businesses')
-    .then(function(response) {
-      console.log('response ', response);
-    })
-    .catch(function(err) {
-      console.log('err! ', err);
-    })
-  }
+
 
   render() {
     return (
@@ -21,7 +13,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro" onClick={this.clickHandler}>
+        <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
       </div>
