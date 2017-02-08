@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BusinessProfile from './businessProfile.js';
+import BusinessProfile from './BusinessProfile.js';
 import axios from 'axios';
 import logo from '../images/ownLocalLogo.png';
 import './App.css';
@@ -29,7 +29,6 @@ class App extends Component {
     var newUrl = '?page=' + newPage;
     var currentPage = this.state.currentPage;
     if(newPage > self.state.currentPage) {
-      console.log('first if', self.state);
       axios.get('http://ec2-54-84-251-148.compute-1.amazonaws.com/businesses' + newUrl)
       .then(function(response) {
         self.setState({businesses: response.data.businesses, currentPage: currentPage + 1});

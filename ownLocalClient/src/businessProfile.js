@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-require('./businessProfileCss.css');
+require('./BusinessProfileCss.css');
 import { Link } from 'react-router';
 
 class BusinessProfile extends Component {
