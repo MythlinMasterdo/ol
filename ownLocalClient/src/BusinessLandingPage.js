@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import logo from '../images/ownLocalLogoDark.png';
 require('./BusinessLandingPage.css');
 
 class BusinessLandingPage extends Component {
@@ -22,6 +23,7 @@ class BusinessLandingPage extends Component {
     }
     return(
       <div className="businessPage">
+        <img src={logo} className="App-logo" alt="logo" />
         {businessInfo}
         <Link to="/">
         <button>Home</button>
