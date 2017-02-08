@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BusinessProfile from './businessProfile.js';
 import axios from 'axios';
-import logo from './logo.svg';
+import logo from '../images/ownLocalLogo.png';
 import './App.css';
 
 class App extends Component {
@@ -32,7 +32,6 @@ class App extends Component {
       console.log('first if', self.state);
       axios.get('http://ec2-54-84-251-148.compute-1.amazonaws.com/businesses' + newUrl)
       .then(function(response) {
-        console.log('response1 ', response.data.businesses);
         self.setState({businesses: response.data.businesses, currentPage: currentPage + 1});
       })
       .catch(function(err) {
@@ -54,7 +53,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Local Businesses!(kind of)</h2>
         </div>
         <div className='col-md-9'>
           {this.state.businesses.map((business) => {

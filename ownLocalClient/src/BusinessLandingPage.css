@@ -5,3 +5,14 @@
 .profilePhone {
   content: url('../images/phone.png');
 }
+
+.businessInfo {
+  border-style: solid;
+  border-color: black;
+  border-radius: 2%;
+}
+
+.businessPage {
+  position: relative;
+  text-align: center;
+}
