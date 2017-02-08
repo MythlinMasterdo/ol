@@ -10,7 +10,6 @@ class BusinessLandingPage extends Component {
         <p><img role="presentation" className='profilePhone profileIcon'/> {window.businessInfo.phone}</p>
         <p>Address: <img role="presentation" className='profileLocation profileIcon'/> {window.businessInfo.address} {window.businessInfo.city}, {window.businessInfo.state} {window.businessInfo.country} {window.businessInfo.zip}</p>
         <p>Website: <a href={window.businessInfo.website}>{window.businessInfo.website}</a></p>
-        <p>{console.log(window.businessInfo)}</p>
       </div>
     } else {
       businessInfo = <div>
@@ -18,7 +17,6 @@ class BusinessLandingPage extends Component {
         <p><img role="presentation" className='profilePhone profileIcon'/> {window.businessInfo.phone}</p>
         <p>Address: <img role="presentation" className='profileLocation profileIcon'/> {window.businessInfo.address} {window.businessInfo.address2} {window.businessInfo.city}, {window.businessInfo.state} {window.businessInfo.country} {window.businessInfo.zip}</p>
         <p>Website: <a href={window.businessInfo.website}>{window.businessInfo.website}</a></p>
-        <p>{console.log(window.businessInfo)}</p>
       </div>
     }
     return(
