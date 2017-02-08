@@ -30,11 +30,12 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <div className='col-md-9'>{
-          this.state.businesses.map((business) => {
-            return (<BusinessProfile onTitleClick={this.props.onTitleClick} key={business.id} business={business}/>)
-          })
-        }</div>
+        <div className='col-md-9'>
+          {this.state.businesses.map((business) => {
+            return (<BusinessProfile key={business.id} business={business}/>)
+          })}
+          {this.props.children}
+        </div>
       </div>
     );
   }

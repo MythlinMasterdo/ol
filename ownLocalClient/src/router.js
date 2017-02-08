@@ -7,7 +7,7 @@ import BusinessLandingPage from './BusinessLandingPage'
 const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={App}/>
-    <Route path='/business' component={BusinessLandingPage} />
+    <Route path='business' component={BusinessLandingPage}/>
   </Router>
 );
 
