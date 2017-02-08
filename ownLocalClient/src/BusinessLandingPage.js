@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-require('./businessProfileCss.css');
+require('./BusinessLandingPage.css');
 
 class BusinessLandingPage extends Component {
   render() {
