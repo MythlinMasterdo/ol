@@ -26,10 +26,11 @@ class App extends Component {
 
   changePage(newPage) {
     var self = this;
+    var newUrl = '?page=' + newPage;
     var currentPage = this.state.currentPage;
     if(newPage > self.state.currentPage) {
       console.log('first if', self.state);
-      axios.get('http://ec2-54-84-251-148.compute-1.amazonaws.com/businesses' + '?page=' + newPage)
+      axios.get('http://ec2-54-84-251-148.compute-1.amazonaws.com/businesses' + newUrl)
       .then(function(response) {
         console.log('response1 ', response.data.businesses);
         self.setState({businesses: response.data.businesses, currentPage: currentPage + 1});
@@ -38,7 +39,7 @@ class App extends Component {
         console.log('err! ', err);
       })
     } else if(newPage > 0) {
-      axios.get('http://ec2-54-84-251-148.compute-1.amazonaws.com/businesses'+ '?page=' + newPage)
+      axios.get('http://ec2-54-84-251-148.compute-1.amazonaws.com/businesses'+ newUrl)
       .then(function(response) {
         self.setState({businesses: response.data.businesses, currentPage: currentPage - 1});
       })
