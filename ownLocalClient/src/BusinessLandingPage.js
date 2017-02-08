@@ -6,7 +6,7 @@ require('./BusinessLandingPage.css');
 class BusinessLandingPage extends Component {
   render() {
     let businessInfo = null;
-    if(window.businessInfo.address2 === null) {
+    if(window.businessInfo.address2 === null || window.businessInfo.address2 === undefined) {
       businessInfo = <div className="businessInfo">
         <h1>{window.businessInfo.name}</h1>
         <p><img role="presentation" className='profilePhone profileIcon'/> {window.businessInfo.phone}</p>
