@@ -25,23 +25,22 @@ class App extends Component {
   }
 
   changePage(newPage) {
-    var config = { headers: {'page': newPage}}
-    console.log('this1 ', this.state);
     var self = this;
-    if(newPage > this.state.currentPage) {
-      axios.get('http://ec2-54-84-251-148.compute-1.amazonaws.com/businesses', config)
+    var currentPage = this.state.currentPage;
+    if(newPage > self.state.currentPage) {
+      console.log('first if', self.state);
+      axios.get('http://ec2-54-84-251-148.compute-1.amazonaws.com/businesses' + '?page=' + newPage)
       .then(function(response) {
-        console.log('this2 ', this.state);
-        self.setState({businesses: response.data.businesses});
+        console.log('response1 ', response.data.businesses);
+        self.setState({businesses: response.data.businesses, currentPage: currentPage + 1});
       })
       .catch(function(err) {
-        console.log('this2 ', this.state);
         console.log('err! ', err);
       })
-    } else {
-      axios.get('http://ec2-54-84-251-148.compute-1.amazonaws.com/businesses', config)
+    } else if(newPage > 0) {
+      axios.get('http://ec2-54-84-251-148.compute-1.amazonaws.com/businesses'+ '?page=' + newPage)
       .then(function(response) {
-        self.setState({businesses: response.data.businesses});
+        self.setState({businesses: response.data.businesses, currentPage: currentPage - 1});
       })
       .catch(function(err) {
         console.log('err! ', err);
@@ -63,8 +62,8 @@ class App extends Component {
           {this.props.children}
         </div>
         <div>
-          <button onClick={() => this.changePage(this.state.currentPage - 1)}>Previous Page</button>
-          <button onClick={() => this.changePage(this.state.currentPage + 1)}>Next Page</button>
+          <button onClick={() => {this.changePage(this.state.currentPage - 1)}}>Previous Page</button>
+          <button onClick={() => {this.changePage(this.state.currentPage + 1)}}>Next Page</button>
         </div>
       </div>
     );
